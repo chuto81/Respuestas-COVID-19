@@ -1,0 +1,941 @@
+{
+  "intents": [
+    {
+      "intent": "cancelar",
+      "examples": [
+        {
+          "text": "cambie de opinión"
+        },
+        {
+          "text": "cancelar"
+        },
+        {
+          "text": "chao"
+        },
+        {
+          "text": "nada mal "
+        },
+        {
+          "text": "nada más"
+        },
+        {
+          "text": "ninguno más"
+        },
+        {
+          "text": "ningún otro síntoma "
+        },
+        {
+          "text": "ningún síntoma más"
+        },
+        {
+          "text": "no me interesa"
+        },
+        {
+          "text": "no nada "
+        },
+        {
+          "text": "no tengo más síntomas"
+        },
+        {
+          "text": "no tengo otros síntomas "
+        },
+        {
+          "text": "olvídalo"
+        },
+        {
+          "text": "parar"
+        },
+        {
+          "text": "parar la búsqueda"
+        },
+        {
+          "text": "parar todo"
+        },
+        {
+          "text": "para ya"
+        },
+        {
+          "text": "quiero parar"
+        },
+        {
+          "text": "salir"
+        }
+      ]
+    },
+    {
+      "intent": "no",
+      "examples": [
+        {
+          "text": "claro que no"
+        },
+        {
+          "text": "de donde sacaste eso?"
+        },
+        {
+          "text": "error"
+        },
+        {
+          "text": "eso no"
+        },
+        {
+          "text": "eso no era"
+        },
+        {
+          "text": "esta mal"
+        },
+        {
+          "text": "mal"
+        },
+        {
+          "text": "negativo"
+        },
+        {
+          "text": "no"
+        },
+        {
+          "text": "no, gracias"
+        },
+        {
+          "text": "no, no quiero"
+        },
+        {
+          "text": "nopo"
+        }
+      ]
+    },
+    {
+      "intent": "si",
+      "examples": [
+        {
+          "text": "correcto"
+        },
+        {
+          "text": "eso"
+        },
+        {
+          "text": "esta bien"
+        },
+        {
+          "text": "ok"
+        },
+        {
+          "text": "okay"
+        },
+        {
+          "text": "perfecto"
+        },
+        {
+          "text": "por favor"
+        },
+        {
+          "text": "seguro"
+        },
+        {
+          "text": "si"
+        },
+        {
+          "text": "sipi"
+        },
+        {
+          "text": "si, por favor"
+        },
+        {
+          "text": "si quiero"
+        }
+      ]
+    },
+    {
+      "intent": "sintomas_descripcion",
+      "examples": [
+        {
+          "text": "es que tengo unos síntomas"
+        },
+        {
+          "text": "estoy enfermo"
+        },
+        {
+          "text": "me estoy sintiendo enfermo"
+        },
+        {
+          "text": "me estoy sintiendo mal"
+        },
+        {
+          "text": "me gustaría saber si tengo el coronavirus"
+        },
+        {
+          "text": "me gustaría saber si tengo el covid"
+        },
+        {
+          "text": "me gustaría saber si tengo el virus"
+        },
+        {
+          "text": "me siento enfermo"
+        },
+        {
+          "text": "me siento muy enfermo"
+        },
+        {
+          "text": "mi familia está con unos síntomas"
+        },
+        {
+          "text": "síntomas"
+        },
+        {
+          "text": "tendré el coronavirus"
+        },
+        {
+          "text": "tengo muchos síntomas"
+        },
+        {
+          "text": "tengo síntomas "
+        }
+      ],
+      "description": "Descripción de síntomas"
+    },
+    {
+      "intent": "ubicacion",
+      "examples": [
+        {
+          "text": "a donde me dirijo a comprar?"
+        },
+        {
+          "text": "donde estan ubicados?"
+        },
+        {
+          "text": "en cual ciudad estan?"
+        },
+        {
+          "text": "tienen oficinas?"
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "entity": "info_contacto",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "celular",
+          "patterns": [
+            "(\\d{3})-(\\d{3})-(\\d{4})"
+          ]
+        },
+        {
+          "type": "patterns",
+          "value": "email",
+          "patterns": [
+            "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}\\b"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "sintomas",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "dificultad_respirar",
+          "synonyms": [
+            "costillas hundidas",
+            "dificil respirar",
+            "dificultad para respirar",
+            "no esta respirando bien",
+            "no me entra aire",
+            "no puedo respirar",
+            "no respiro bien por la boca",
+            "sonidos en el pecho"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "dolor_cabeza",
+          "synonyms": [
+            "dolor de cabeza",
+            "dolor de craneo",
+            "dolor de parte alta",
+            "dolor de pelo",
+            "me duele la cabeza"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "dolor_garganta",
+          "synonyms": [
+            "dolor al pasar comida",
+            "dolor de garganta",
+            "la comida me sabe diferente",
+            "me carraspea la garganta",
+            "me duele al comer",
+            "me duele el cuello",
+            "no paso comida",
+            "no puedo comer bien"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "fiebre",
+          "synonyms": [
+            "caliente",
+            "fiebre",
+            "me siento caliente",
+            "mucha fiebre",
+            "muy caliente",
+            "tengo fiebre"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "malestar_general",
+          "synonyms": [
+            "dolor general",
+            "escalofrios",
+            "escalofrios generales",
+            "malestar general",
+            "maluquera",
+            "me duele el cuerpo",
+            "me duelen las articulaciones",
+            "me duele todo el cuerpo",
+            "me siento muy mal",
+            "no puedo levantarme",
+            "tiemblo mucho"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "secrecion_nasal",
+          "synonyms": [
+            "estoy muy tapado",
+            "me salen muchos mocos",
+            "mocos",
+            "no respiro por la nariz",
+            "secrecion nasal",
+            "secreción y goteo nasal",
+            "tengo mocos",
+            "tengo muchos mocos"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "tos",
+          "synonyms": [
+            "no paro de toser",
+            "tos",
+            "toser",
+            "toser fuerte",
+            "tos seca"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-date",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-percentage",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-time",
+      "values": [],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    },
+    "from-sample": true
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Bienvenido",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hola, somos un grupo de médicos independientes y estamos ayudando con información sobre el Coronavirus. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "time": 500,
+            "typing": false,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "Puedes preguntarnos sobre síntomas, prevención o tratamiento."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "time": 500,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "¿Sobre qué deseas conocer?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Bienvenido",
+      "previous_sibling": "node_7_1584725106738"
+    },
+    {
+      "type": "standard",
+      "title": "En otras cosas",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "No le he entendido. Intente reformular la consulta."
+              },
+              {
+                "text": "¿Puede expresarse con otras palabras? No le he entendido."
+              },
+              {
+                "text": "No entendí el significado."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_4_1584744300628"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "En otras cosas",
+      "previous_sibling": "Bienvenido",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1584746874653",
+      "context": {
+        "sintoma": "@sintomas"
+      },
+      "conditions": "@sintomas",
+      "event_name": "input",
+      "dialog_node": "handler_1_1584746874665"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_2_1584998705422",
+      "context": {
+        "sintoma": "@sintomas"
+      },
+      "conditions": "@sintomas",
+      "event_name": "input",
+      "dialog_node": "handler_3_1584998705422"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_2_1584998705422",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1584998705422",
+      "previous_sibling": "handler_3_1584998705422"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_6_1584745411109",
+      "event_name": "input",
+      "dialog_node": "handler_5_1584745411113"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_8_1584744647485",
+      "context": {
+        "sintoma1": "@sintomas"
+      },
+      "conditions": "@sintomas",
+      "event_name": "input",
+      "dialog_node": "handler_7_1584744647498"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Disculpa, no reconozco el síntoma que me mencionas."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_8_1584744647485",
+      "event_name": "focus",
+      "dialog_node": "handler_8_1584744647498",
+      "previous_sibling": "handler_7_1584744647498"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_6_1584745411109",
+      "event_name": "focus",
+      "dialog_node": "handler_8_1584745411113",
+      "previous_sibling": "handler_5_1584745411113"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "¿Hace cuántos días tienes fiebre?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_8_1584744647485",
+      "conditions": "$sintoma1:fiebre",
+      "event_name": "filled",
+      "dialog_node": "handler_8_1584745520444",
+      "previous_sibling": "handler_8_1584744647498"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1584746874653",
+      "event_name": "focus",
+      "dialog_node": "handler_8_1584746874665",
+      "previous_sibling": "handler_1_1584746874665"
+    },
+    {
+      "type": "standard",
+      "title": "Sintoma dificultad para respirar",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_4_1584744300628",
+      "context": {
+        "contador": "<? context['contador'] + 1 ?>",
+        "sintomarespirar": "<? entities['sintomas'].value ?>"
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_4_1584744300628"
+      },
+      "conditions": "@sintomas:dificultad_respirar",
+      "dialog_node": "node_1_1584998705409",
+      "previous_sibling": "node_3_1584746850175"
+    },
+    {
+      "type": "standard",
+      "title": "Tratamiento",
+      "parent": "Bienvenido",
+      "dialog_node": "node_1_1585000123395",
+      "previous_sibling": "node_5_1584744296822"
+    },
+    {
+      "type": "standard",
+      "title": "No mas sintomas",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_4_1584744300628",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_6_1585000129397"
+      },
+      "conditions": "#cancelar",
+      "dialog_node": "node_1_1585001841106",
+      "previous_sibling": "node_1_1584998705409"
+    },
+    {
+      "type": "standard",
+      "title": "Sintoma fiebre",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_4_1584744300628",
+      "context": {
+        "contador": "<? context['contador'] + 1 ?>",
+        "sintomafiebre": "<? entities['sintomas'].value ?>"
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_4_1584744300628"
+      },
+      "conditions": "@sintomas:fiebre",
+      "dialog_node": "node_3_1584746850175",
+      "previous_sibling": "node_7_1584756778385"
+    },
+    {
+      "type": "standard",
+      "title": "Sintomas",
+      "parent": "Bienvenido",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#sintomas_descripcion",
+      "dialog_node": "node_4_1584744300628"
+    },
+    {
+      "type": "standard",
+      "title": "Prevencion contagio",
+      "parent": "Bienvenido",
+      "dialog_node": "node_5_1584744296822",
+      "previous_sibling": "node_4_1584744300628"
+    },
+    {
+      "type": "standard",
+      "title": "Respuesta",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Nuestra recomendación es que vayas al centro médico más cercano y comentes los síntomas que nos acabas de decir. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "time": 500,
+            "typing": false,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "Puedes solicitar más ayuda en el teléfono 123 o 192."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "time": 250,
+            "typing": false,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "Puedes llamar desde un teléfono fijo o celular."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Bienvenido",
+      "conditions": "false",
+      "dialog_node": "node_6_1585000129397",
+      "previous_sibling": "node_1_1585000123395"
+    },
+    {
+      "type": "standard",
+      "title": "Inicio de la Conversación",
+      "output": {
+        "generic": []
+      },
+      "context": {
+        "contador": 0,
+        "sintomafiebre": 0,
+        "sintomarespirar": 0
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "Bienvenido"
+      },
+      "conditions": "conversation_start",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_7_1584725106738"
+    },
+    {
+      "type": "standard",
+      "title": "Otros sintomas",
+      "parent": "node_4_1584744300628",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "false",
+      "dialog_node": "node_7_1584756778385"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_3_1584746850175",
+      "disabled": true,
+      "dialog_node": "response_10_1584758715073",
+      "previous_sibling": "response_2_1584746874332"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "¿Qué otro síntomas tienes?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1584756778385",
+      "context": {},
+      "conditions": "#cancelar || #no",
+      "dialog_node": "response_10_1584999353566"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1584746850175",
+      "disabled": true,
+      "conditions": "@sys-date",
+      "dialog_node": "response_2_1584746874332",
+      "previous_sibling": "slot_9_1584746874653"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "¿Qué síntomas presentas?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1584744300628",
+      "context": {},
+      "conditions": "$contador:0",
+      "dialog_node": "response_5_1584744561075",
+      "previous_sibling": "slot_6_1584745411109"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1584998705409",
+      "disabled": true,
+      "conditions": "@sys-date",
+      "dialog_node": "response_5_1584998705422",
+      "previous_sibling": "slot_2_1584998705422"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Listo, en unos segundos te diremos lo que debes hacer según tus síntomas."
+              },
+              {
+                "text": "Procesando tus síntomas en unos segundos te diremos que debes hacer."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          },
+          {
+            "time": 1000,
+            "typing": false,
+            "response_type": "pause"
+          }
+        ]
+      },
+      "parent": "node_4_1584744300628",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_6_1585000129397"
+      },
+      "conditions": "#cancelar",
+      "dialog_node": "response_5_1584999999479",
+      "previous_sibling": "response_7_1584744571608"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1584998705409",
+      "disabled": true,
+      "dialog_node": "response_6_1584998705422",
+      "previous_sibling": "response_5_1584998705422"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "¿Qué otro síntomas tienes?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_4_1584744300628",
+      "conditions": "$contador>=1",
+      "dialog_node": "response_7_1584744571608",
+      "previous_sibling": "response_5_1584744561075"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1584998705409",
+      "variable": "$sintoma",
+      "dialog_node": "slot_2_1584998705422"
+    },
+    {
+      "type": "slot",
+      "parent": "node_4_1584744300628",
+      "dialog_node": "slot_6_1584745411109",
+      "previous_sibling": "slot_8_1584744647485"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_4_1584744300628",
+      "variable": "$sintoma1",
+      "dialog_node": "slot_8_1584744647485",
+      "previous_sibling": "node_1_1585001841106"
+    },
+    {
+      "type": "slot",
+      "parent": "node_3_1584746850175",
+      "variable": "$sintoma",
+      "dialog_node": "slot_9_1584746874653"
+    }
+  ],
+  "counterexamples": [
+    {
+      "text": "cuando "
+    },
+    {
+      "text": "cuento fiebre "
+    },
+    {
+      "text": "dificultad para respirar "
+    },
+    {
+      "text": "fiebre, dolor"
+    },
+    {
+      "text": "me duele el cuerpo "
+    },
+    {
+      "text": "nada mal "
+    },
+    {
+      "text": "no puedo respirar"
+    }
+  ],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": "Querías decir:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "Ninguna de las anteriores"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Querías decir:"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "Respuestas_COVID19",
+  "language": "es",
+  "description": "Responder preguntas sobre COVID19"
+}
